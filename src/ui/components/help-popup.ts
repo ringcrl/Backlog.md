@@ -11,6 +11,7 @@ type Shortcut = {
 
 const BOARD_SHORTCUTS: Shortcut[] = [
 	{ key: "Tab", desc: "Switch View (Kanban/List)" },
+	{ key: "N", desc: "Create a task" },
 	{ key: "/", desc: "Search tasks" },
 	{ key: "T", desc: "Filter by Type" },
 	{ key: "P", desc: "Filter by Priority" },
@@ -22,7 +23,7 @@ const BOARD_SHORTCUTS: Shortcut[] = [
 	{ key: "E", desc: "Edit task" },
 	{ key: "M", desc: "Move task (Status/Order)" },
 	{ key: "C", desc: "Complete task" },
-	{ key: "A", desc: "Archive task" },
+	{ key: "D", desc: "Delete task (move to archive)" },
 	{ key: "Y", desc: "Yank (Copy) task ID" },
 	{ key: "?", desc: "Show this help menu" },
 	{ key: "q/Esc", desc: "Quit / Close" },
@@ -41,7 +42,7 @@ const TASK_LIST_SHORTCUTS: Shortcut[] = [
 	{ key: "Enter", desc: "Focus task details" },
 	{ key: "E", desc: "Edit task" },
 	{ key: "C", desc: "Complete task" },
-	{ key: "A", desc: "Archive task" },
+	{ key: "D", desc: "Delete task (move to archive)" },
 	{ key: "Y", desc: "Yank (Copy) task ID" },
 	{ key: "?", desc: "Show this help menu" },
 	{ key: "q/Esc", desc: "Quit / Close" },

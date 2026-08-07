@@ -1125,11 +1125,11 @@ export async function viewTaskEnhanced(
 			}
 		} else if (currentFocus === "detail") {
 			content =
-				" {cyan-fg}[Tab]{/} View | {cyan-fg}[←]{/} List | {cyan-fg}[↑↓]{/} Scroll | {cyan-fg}[E]{/} Edit | {cyan-fg}[Y]{/} Yank | {cyan-fg}[?]{/} Help | {cyan-fg}[q]{/} Quit";
+				" {cyan-fg}[Tab]{/} View | {cyan-fg}[←]{/} List | {cyan-fg}[↑↓]{/} Scroll | {cyan-fg}[E/D]{/} Edit/Delete | {cyan-fg}[Y]{/} Yank | {cyan-fg}[?]{/} Help | {cyan-fg}[q]{/} Quit";
 		} else {
 			// Task list help
 			content =
-				" {cyan-fg}[Tab]{/} View | {cyan-fg}[/]{/} Search | {cyan-fg}[s/t/p/i/l]{/} Filter | {cyan-fg}[↑↓]{/} Nav | {cyan-fg}[E/C/A]{/} Edit/Comp/Arch | {cyan-fg}[Y]{/} Yank | {cyan-fg}[?]{/} Help | {cyan-fg}[q]{/} Quit";
+				" {cyan-fg}[Tab]{/} View | {cyan-fg}[/]{/} Search | {cyan-fg}[s/t/p/i/l]{/} Filter | {cyan-fg}[↑↓]{/} Nav | {cyan-fg}[E/C/D]{/} Edit/Comp/Delete | {cyan-fg}[Y]{/} Yank | {cyan-fg}[?]{/} Help | {cyan-fg}[q]{/} Quit";
 		}
 
 		setHelpBarContent(content);
@@ -1331,7 +1331,7 @@ export async function viewTaskEnhanced(
 		await applyTaskLifecycleShortcut(task, "complete");
 	});
 
-	screen.key(["a", "A"], async () => {
+	screen.key(["a", "A", "d", "D"], async () => {
 		if (modalOpen || filterPopupOpen || currentFocus === "filters") return;
 		const task = getCurrentShortcutTask();
 		if (!task) return;
